@@ -1,9 +1,3 @@
-type frame_type =
-  | Mtb
-  | Cross
-  | TimeTrial
-  | Road;
-
 type shoe = {
     id: int,
     name: string,
@@ -11,6 +5,12 @@ type shoe = {
     brand_name: string,
     model_name: string
 };
+
+type frame_type =
+  | Mtb
+  | Cross
+  | TimeTrial
+  | Road;
 
 type bike = {
     id: int,
@@ -29,25 +29,24 @@ type club = {
     member_count: int    
 };
 
+type activity_type = 
+  | Run
+  | Swin
+  | Ride; 
+
 type map = { 
     id: int,
     polyline: string,
     summary_polyline: string
 };
-
-type activity_type = 
-  | Run
-  | Swin
-  | Ride;  
-
+  
 type activity = {
     id: int,
-    name: string,
-    description: string,
+    elevation_gain: float,
+    activity_type,
     distance: float,
     elapsed_time: int,
     total_elevation_gain: float,
-    type: activity_type,
     kudos_count: int,
     comment_count: int,
     map
@@ -57,8 +56,8 @@ type athlete = {
     id: int,
     firstname: string,
     lastname: string,
-    bikes: list(bike),
     shoes: list(shoe),
+    bikes: list(bike), 
     clubs: list(club),
     activities: list(activity)
 };

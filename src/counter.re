@@ -7,24 +7,24 @@ type action =
 /* The component's state type. It can be anything, including, commonly, being a record type */
 type state = {
   count: int,
-  timerId: ref(option(Js.Global.intervalId))  
+  timerId: ref(option(Js.Global.intervalId)), 
+  athlete: Business.athlete   
 };
 
-let component = ReasonReact.reducerComponent("Counter");
-
-/*let toto: Business.athlete = {
-  id: 1,
-  firstname: "toto",
-  lastname: "rototo",
+let toto:Business.athlete = {
+  id:1,
+  firstname:"toto",
+  lastname:"rototo",
   shoes: [], 
-  bikes: [], 
-  clubs: [], 
-  activities: []
-};*/
+  bikes:[], 
+  clubs:[], 
+  activities:[]
+};
+let component = ReasonReact.reducerComponent("Counter");
 
 let make = (_children) => {
   ...component,
-  initialState: () => {count: 0, timerId: ref(None)},
+  initialState: () => {count: 0, timerId: ref(None), athlete:toto},
   reducer: (action, state) =>
     switch action {
     | Tick => ReasonReact.Update({...state, count: state.count + 1})
