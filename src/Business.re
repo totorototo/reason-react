@@ -1,0 +1,3 @@
+type athlete = {
+    id: int
+};

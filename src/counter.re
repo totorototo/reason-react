@@ -1,15 +1,26 @@
 /* This is a stateful component. In ReasonReact, we call them reducer components */
 /* A list of state transitions, to be used in self.reduce and reducer */
+
 type action =
   | Tick;
 
 /* The component's state type. It can be anything, including, commonly, being a record type */
 type state = {
   count: int,
-  timerId: ref(option(Js.Global.intervalId))
+  timerId: ref(option(Js.Global.intervalId))  
 };
 
 let component = ReasonReact.reducerComponent("Counter");
+
+/*let toto: Business.athlete = {
+  id: 1,
+  firstname: "toto",
+  lastname: "rototo",
+  shoes: [], 
+  bikes: [], 
+  clubs: [], 
+  activities: []
+};*/
 
 let make = (_children) => {
   ...component,
