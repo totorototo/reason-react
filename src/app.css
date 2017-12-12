@@ -1,8 +1,3 @@
-.container {
-  display: flex;
-  flex-direction: column;
-}
-
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 80px;
@@ -20,7 +15,6 @@
 .wrapper {
   /* occupe la hauteur restante */
   flex: 1 1 auto;
-
   /* crée un contexte flex pour ses enfants */
   display: flex;
 }
