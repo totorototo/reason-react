@@ -7,16 +7,16 @@ let component = ReasonReact.statelessComponent("App");
 let make = (~message, _children) => {
   ...component,
   render: (_self) =>
-    <div className="App">      
-      <div className="App-header">
+    <div className="container">
+      <header>
         <img src=logo className="App-logo" alt="logo" />
         <h2> (ReasonReact.stringToElement(message)) </h2>
+      </header>
+      <div className="wrapper">
+        <article> (ReasonReact.stringToElement(message)) </article>
+        <nav> (ReasonReact.stringToElement("navigation")) </nav>
+        <aside> (ReasonReact.stringToElement("aside")) </aside>
       </div>
-      <p className="App-intro">
-        (ReasonReact.stringToElement("To get started, edit"))
-        <code> (ReasonReact.stringToElement(" src/App.re ")) </code>
-        (ReasonReact.stringToElement("and save to reload."))
-      </p> 
-      <Counter />     
+      <footer> (ReasonReact.stringToElement("footer")) </footer>
     </div>
 };

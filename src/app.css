@@ -1,5 +1,18 @@
-.App {
-  text-align: center;
+body {
+  /* crée un contexte flex pour ses enfants */
+  display: flex;
+
+  /* affichage vertical */
+  flex-direction: column;
+
+  /* toute la hauteur du viewport */
+  min-height: 100vh;
+
+  padding: 1em;
+}
+.container {
+  display: flex;
+  flex-direction: column;
 }
 
 .App-logo {
@@ -7,18 +20,97 @@
   height: 80px;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
-}
-
-.App-intro {
-  font-size: large;
-}
-
 @keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.wrapper {
+  /* occupe la hauteur restante */
+  flex: 1 1 auto;
+
+  /* crée un contexte flex pour ses enfants */
+  display: flex;
+}
+
+nav,
+aside {
+  width: 10em;
+}
+
+article {
+  /* occupe la largeur restante */
+  flex: 1;
+}
+
+nav {
+  /* nav s'affiche en premier */
+  order: -1;
+}
+
+/* Responsive (fenêtres de moins de 640px) */
+@media (max-width: 640px) {
+  .wrapper {
+    /* affichage vertical */
+    flex-direction: column;
+  }
+
+  nav,
+  aside {
+    /* pour écraser la valeur 10em */
+    width: auto;
+  }
+
+  nav,
+  aside,
+  article {
+    /* pour écraser la valeur 0, due au flex: 1 */
+    flex-basis: auto;
+  }
+
+  nav {
+    /* nav reprend sa place */
+    order: 0;
+  }
+}
+
+/* Decoration */
+body {
+  margin: 0;
+  background-color: #999;
+  font-family: arial, sans-serif;
+}
+
+header,
+nav,
+aside,
+article,
+footer {
+  margin: 0.4em;
+  padding: 1em;
+  border-radius: 6px;
+}
+
+header {
+  background-color: #feb;
+}
+
+nav {
+  background-color: #ccf;
+}
+
+aside {
+  background-color: #ccf;
+}
+
+article {
+  background-color: #dd8;
+}
+
+footer {
+  background-color: #feb;
 }
