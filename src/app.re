@@ -7,7 +7,7 @@ let component = ReasonReact.statelessComponent("App");
 let make = (~message, _children) => {
   ...component,
   render: (_self) =>
-    <div className="container">
+    <div>
       <header>
         <img src=logo className="App-logo" alt="logo" />
         <h2> (ReasonReact.stringToElement(message)) </h2>
