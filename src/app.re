@@ -13,7 +13,7 @@ let make = (~message, _children) => {
         (ReasonReact.stringToElement(message))
       </header>
       <div className="wrapper">
-        <article className="component"> (ReasonReact.stringToElement("article")) </article>
+        <article className="component"> <Counter /> </article>
         <nav className="component"> (ReasonReact.stringToElement("navigation")) </nav>
         <aside className="component"> (ReasonReact.stringToElement("aside")) </aside>
       </div>
