@@ -8,12 +8,12 @@ let make = (~message, _children) => {
   ...component,
   render: (_self) =>
     <div>
-      <header>
+      <header className="component">
         <img src=logo className="App-logo" alt="logo" />
-        <h2> (ReasonReact.stringToElement(message)) </h2>
+        (ReasonReact.stringToElement(message))
       </header>
       <div className="wrapper">
-        <article> (ReasonReact.stringToElement(message)) </article>
+        <article className="component"> (ReasonReact.stringToElement("article")) </article>
         <nav> (ReasonReact.stringToElement("navigation")) </nav>
         <aside> (ReasonReact.stringToElement("aside")) </aside>
       </div>
