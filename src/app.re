@@ -14,9 +14,9 @@ let make = (~message, _children) => {
       </header>
       <div className="wrapper">
         <article className="component"> (ReasonReact.stringToElement("article")) </article>
-        <nav> (ReasonReact.stringToElement("navigation")) </nav>
-        <aside> (ReasonReact.stringToElement("aside")) </aside>
+        <nav className="component"> (ReasonReact.stringToElement("navigation")) </nav>
+        <aside className="component"> (ReasonReact.stringToElement("aside")) </aside>
       </div>
-      <footer> (ReasonReact.stringToElement("footer")) </footer>
+      <footer className="component"> (ReasonReact.stringToElement("footer")) </footer>
     </div>
 };
